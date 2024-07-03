@@ -14,4 +14,9 @@ urlpatterns = [
     path('logout/',Logout.as_view(), name='logout'),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('', include('tipo_siembra.urls')),
+    path('',include('herramientas_agricultura_precision.urls')),
+    path('',include('hectareas.urls')),
+    path('',include('nutrientes.urls'))
+
 ]

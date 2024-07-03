@@ -2,17 +2,27 @@ from django.db import models
 
 # Create your models here.
 class Nutrientes(models.Model):
+    level_choices = [
+        ('BAJO','Bajo'),
+        ('OPTIMO','Optimo'),
+        ('ELEVADO','Elevado') 
+    ]
     name = models.CharField('Nombre del nutriente',max_length=45)
     type_of_nutrient = models.CharField('Tipo de nutriente',max_length=45)
     description = models.CharField('Descripción del nutriente',max_length=100)
-    parameters= models.FloatField('Parametros')
+    levels= models.CharField(choices=level_choices,max_length=20)
 
     def __str__(self):
         return self.name
     
 class pH(models.Model):
+    level_choices= [
+        ('BAJO','Bajo'),
+        ('OPTIMO','Optimo'),
+        ('ELEVADO','Elevado'),
+    ]
     description = models.CharField(max_length=100)
-    parameters = models.FloatField()
+    levels = models.CharField(choices=level_choices, max_length=20)
 
     def __str__(self):
         return self.description
