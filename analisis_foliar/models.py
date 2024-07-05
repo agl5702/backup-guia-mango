@@ -15,4 +15,4 @@ class AnalisisFoliar(models.Model):
 
     class Meta:
         db_table = 'Analisis_Foliar'
-        verbose_name_plural = 'Análisis Florial'
+        verbose_name_plural = 'Análisis Foliar'
