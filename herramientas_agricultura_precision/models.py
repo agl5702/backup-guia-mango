@@ -6,6 +6,7 @@ class TipoMercado(models.Model):
     description = models.TextField('Descripción del tipo de mercado',max_length=1000)
 
     class Meta:
+        db_table = 'Tipo_Mercado'
         verbose_name_plural = 'Tipos de mercados'
 
     def __str__(self):
@@ -19,6 +20,7 @@ class Herramientas(models.Model):
     type_market = models.ManyToManyField(TipoMercado)
 
     class Meta:
+        db_table = 'Herramientas'
         verbose_name_plural = 'Herramientas'
 
     def __str__(self):

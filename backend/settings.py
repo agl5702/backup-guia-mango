@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'tipo_siembra',
     'users',
     'variedad_mango',
+    'analisis_foliar',
 
     # Third Apps
     'corsheaders',

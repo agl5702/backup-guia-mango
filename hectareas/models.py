@@ -8,6 +8,7 @@ class Hectareas(models.Model):
     number_trees= models.IntegerField('Cantidad de Árboles',default=0)
 
     class Meta:
+        db_table = 'Hectareas'
         verbose_name_plural = 'Hectáreas'
 
     def __str__(self):

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from variedad_mango.models import VariedadMango,AptitudSuelo
+from variedad_mango.models import VariedadMango,AnalisisSuelo
 
 
 class VariedadMangoSerializer(serializers.ModelSerializer):
@@ -8,9 +8,9 @@ class VariedadMangoSerializer(serializers.ModelSerializer):
         model = VariedadMango
         fields = '__all__'
         
-class AptitudSueloSerializer(serializers.ModelSerializer):
+class AnalisisSueloSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model = AptitudSuelo
+        model = AnalisisSuelo
         fields= '__all__'
 

@@ -6,6 +6,7 @@ class TipoSiembra(models.Model):
     description = models.TextField('Descripción', max_length=1000)
 
     class Meta:
+        db_table = 'Tipo_Siembra'
         verbose_name_plural = 'Tipos de siembra'
     
     def __str__(self):
