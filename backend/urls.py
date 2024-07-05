@@ -36,6 +36,7 @@ urlpatterns = [
     path('tipo-de-siembra/',include('tipo_siembra.urls')),
     path('herramientas-de-agricultura-de-presicion/',include('herramientas_agricultura_precision.urls')),
     path('hectareas/',include('hectareas.urls')),
-    path('suelo/',include('suelo.urls'))
+    path('suelo/',include('suelo.urls')),
+    path('variedad-mango/',include('variedad_mango.urls')),
 
 ]

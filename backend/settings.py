@@ -14,18 +14,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'your_secret_key_here')
 
-DEBUG = 'RENDER' not in os.environ
+# Configuración para activar o desactivar la depuración según el entorno
+DEBUG = os.environ.get('RENDER') != 'true'
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 # TOKEN_EXPIRED_AFTER_SECONDS=60
-
-
-
-ALLOWED_HOSTS = ['*', os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
-
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOWED_ORIGINS = ["*"]
+ALLOWED_HOSTS = ['*','http://localhost:5173/']
+CORS_ALLOW_ALL_ORIGINS = True
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
