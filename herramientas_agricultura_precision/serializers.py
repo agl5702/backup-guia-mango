@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from herramientas_agricultura_precision.models import HerAgri,TipoMercado
+from herramientas_agricultura_precision.models import Herramientas,TipoMercado
 
 
 # Serializer Views
-class HerAgriSerializer(serializers.ModelSerializer):
+class HerramientasSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model = HerAgri
+        model = Herramientas
         fields ='__all__'
         
 class TipoMercadoSerializer(serializers.ModelSerializer):

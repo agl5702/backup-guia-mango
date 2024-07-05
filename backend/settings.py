@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'hectareas',
     'herramientas_agricultura_precision',
     'informes',
-    'nutrientes',
+    'suelo',
     'tablas_estadisticas',
     'tipo_siembra',
     'users',
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # Third Apps
     'corsheaders',
     'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

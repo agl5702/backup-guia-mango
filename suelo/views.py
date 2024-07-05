@@ -1,13 +1,15 @@
 from rest_framework import viewsets
-from nutrientes.models import Nutrientes,pH,TipoTerreno,TipoSuelo
-from nutrientes.serializers import NutrientesSerializer,pHSerializer,TipoTerrenoSerializer,TipoSueloSerializer
+from suelo.models import FertilidadSuelo,pH,TipoTerreno,TipoSuelo
+from suelo.serializers import FertilidadSueloSerializer,pHSerializer,TipoTerrenoSerializer,TipoSueloSerializer
 
 
 # Create your views here.
-class NutrientesView(viewsets.ModelViewSet):
+class FertilidadSueloView(viewsets.ModelViewSet):
     
-    serializer_class = NutrientesSerializer
-    queryset = Nutrientes.objects.all()
+    serializer_class = FertilidadSueloSerializer
+    queryset = FertilidadSuelo.objects.all()
+
+
     
 class pHView(viewsets.ModelViewSet):
     serializer_class = pHSerializer

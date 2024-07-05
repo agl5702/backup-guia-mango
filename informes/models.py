@@ -7,6 +7,9 @@ class Informes(models.Model):
     description = models.CharField(max_length=45)
     date = models.DateTimeField()
 
+    class Meta:
+        verbose_name_plural = 'Informes'
+
     def __str__(self):
         return self.name
 

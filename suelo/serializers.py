@@ -1,11 +1,11 @@
 from rest_framework import serializers
-from nutrientes.models import Nutrientes,pH,TipoTerreno,TipoSuelo
+from suelo.models import FertilidadSuelo,pH,TipoTerreno,TipoSuelo
 
 
-class NutrientesSerializer(serializers.ModelSerializer):
+class FertilidadSueloSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model = Nutrientes
+        model = FertilidadSuelo
         fields = '__all__'
         
 class pHSerializer(serializers.ModelSerializer):
