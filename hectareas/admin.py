@@ -1,4 +1,7 @@
 from django.contrib import admin
 from hectareas.models import Hectareas
 # Register your models here.
-admin.site.register(Hectareas)
+class HectareasAdmin(admin.ModelAdmin):
+    list_display = ('id', 'amount', 'description', 'number_trees')
+
+admin.site.register(Hectareas,HectareasAdmin)
