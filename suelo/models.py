@@ -2,16 +2,11 @@ from django.db import models
 
 # Create your models here.
 class FertilidadSuelo(models.Model):
-    level_choices = [
-        ('MUY BAJO','Muy Bajo'),
-        ('BAJO','Bajo'),
-        ('MODERADO','Moderado'),
-        ('ALTO','Alto') 
-    ]
+
     name = models.CharField('Nombre del nutriente',max_length=45)
     type_of_nutrient = models.CharField('Tipo de nutriente',max_length=45)
     description = models.CharField('Descripción del nutriente',max_length=500)
-    level= models.CharField('Nivel del nutriente',choices=level_choices,max_length=20)
+    #Eliminar campo 'level'
     value =models.FloatField('Valor del nutriente')
 
     class Meta:
@@ -21,13 +16,11 @@ class FertilidadSuelo(models.Model):
         return self.name
     
 class pH(models.Model):
-    level_choices= [
-        ('BAJO','Bajo'),
-        ('OPTIMO','Optimo'),
-        ('ELEVADO','Elevado'),
-    ]
+    # Eliminar choices
+
     description = models.CharField(max_length=500)
-    level = models.CharField(choices=level_choices, max_length=20)
+    value = models.FloatField('Valor del pH',default=7.0, null=False, blank=False)
+    # Eliminar campo 'level'
 
     class Meta:
         db_table = 'ph'
@@ -75,14 +68,9 @@ class TexturaSuelo(models.Model):
         verbose_name_plural = 'Texturas del suelo'
         
 class DrenajeSuelo(models.Model):
-    level_choices= [
-        ('MALO','Malo'),
-        ('BUENO','Bueno'),
-        ('ADECUADO','Adecuado'),
-
-    ]
-
-    level = models.CharField('Nivel de drenaje', max_length=50, choices=level_choices)
+    # Eliminar choices
+   
+    # Eliminar campo level
     value = models.FloatField('Valor de referencia')
     infiltration_rate= models.FloatField('Tasa de infiltración')
     field_capacity = models.FloatField('Capacidad de campo')
