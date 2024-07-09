@@ -22,8 +22,9 @@ DEBUG = os.environ.get('RENDER') != 'true'
 DEBUG = True
 
 # TOKEN_EXPIRED_AFTER_SECONDS=60
-ALLOWED_HOSTS = ['*','http://localhost:5173/']
+ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
+
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -149,8 +150,6 @@ if not DEBUG:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOWED_ORIGINS = ["http://localhost:5173",'http://192.168.0.1']
 
 REST_FRAMEWORK = {
     
