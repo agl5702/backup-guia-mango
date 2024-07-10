@@ -1,12 +1,16 @@
 from django.db import models
 
-# Create your models here.
+# Modelos
 class FertilidadSuelo(models.Model):
+    level_choices = [
+        ('BAJO','Bajo'),
+        ('OPTIMO','Optimo'),
+        ('ELEVADO','Elevado'),
+        ]
 
     name = models.CharField('Nombre del nutriente',max_length=45)
-    type_of_nutrient = models.CharField('Tipo de nutriente',max_length=45)
     description = models.CharField('Descripción del nutriente',max_length=500)
-    #Eliminar campo 'level'
+    level = models.CharField('Nivel del nutiente', choices=level_choices,max_length=255)
     value =models.FloatField('Valor del nutriente')
 
     class Meta:
@@ -14,13 +18,18 @@ class FertilidadSuelo(models.Model):
         verbose_name_plural = 'FertilidadSuelo'
     def __str__(self):
         return self.name
-    
+# Ph    
 class pH(models.Model):
-    # Eliminar choices
+    level_choices = [
+        ('BAJO','Bajo'),
+        ('OPTIMO','Optimo'),
+        ('ELEVADO','Elevado'),
+    ]
+
 
     description = models.CharField(max_length=500)
     value = models.FloatField('Valor del pH',default=7.0, null=False, blank=False)
-    # Eliminar campo 'level'
+    level = models.CharField('Nivel del nutiente', choices=level_choices,max_length=255)
 
     class Meta:
         db_table = 'ph'
@@ -28,6 +37,7 @@ class pH(models.Model):
     def __str__(self):
         return self.description
     
+#Tipo de Terreno   
 class TipoTerreno(models.Model):
     name = models.CharField(max_length=45)
     description = models.CharField(max_length=500)
@@ -39,6 +49,7 @@ class TipoTerreno(models.Model):
     def __str__(self):
         return self.name
     
+# Tipos de suelo 
 class TipoSuelo(models.Model):
     name = models.CharField(max_length=45)
     description = models.CharField(max_length=500)
@@ -53,6 +64,7 @@ class TipoSuelo(models.Model):
     def __str__(self):
         return self.name
     
+#Textura de suelo
 class TexturaSuelo(models.Model):
     name_choices= [
         ('Arena', 'Arena'),
@@ -66,7 +78,7 @@ class TexturaSuelo(models.Model):
     class Meta:
         db_table = 'Textura_Suelo'
         verbose_name_plural = 'Texturas del suelo'
-        
+# Drenaje del suelo
 class DrenajeSuelo(models.Model):
     # Eliminar choices
    
