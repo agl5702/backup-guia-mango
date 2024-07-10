@@ -54,7 +54,7 @@ class HectareasView(viewsets.ModelViewSet):
     )
     def partial_update(self, request, *args, **kwargs):
         return super().partial_update(request, *args, **kwargs)
-    
+
 
     @swagger_auto_schema(
         operation_description="Eliminar una medida de hectárea",
