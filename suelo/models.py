@@ -34,8 +34,9 @@ class pH(models.Model):
     class Meta:
         db_table = 'ph'
         verbose_name_plural = 'pH'
+
     def __str__(self):
-        return self.description
+        return self.value
     
 #Tipo de Terreno   
 class TipoTerreno(models.Model):
@@ -53,7 +54,8 @@ class TipoTerreno(models.Model):
 class TipoSuelo(models.Model):
     name = models.CharField(max_length=45)
     description = models.CharField(max_length=500)
-    nutrients = models.ForeignKey(FertilidadSuelo, on_delete=models.CASCADE)
+    # change 
+    nutrients = models.ManyToManyField(FertilidadSuelo)
     ph = models.ForeignKey(pH, on_delete=models.CASCADE)
     type_of_terrain = models.ForeignKey(TipoTerreno, on_delete=models.CASCADE)
 
@@ -78,6 +80,10 @@ class TexturaSuelo(models.Model):
     class Meta:
         db_table = 'Textura_Suelo'
         verbose_name_plural = 'Texturas del suelo'
+
+    def __str__(self):
+        return self.name
+
 # Drenaje del suelo
 class DrenajeSuelo(models.Model):
     # Eliminar choices

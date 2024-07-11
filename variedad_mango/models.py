@@ -19,8 +19,8 @@ class VariedadMango(models.Model):
     description = models.CharField(max_length=500)
     soil_type = models.ForeignKey(TipoSuelo, on_delete=models.CASCADE)
     sowing_type = models.ForeignKey(TipoSiembra, on_delete=models.CASCADE)
-    type_of_market = models.ForeignKey(TipoMercado, on_delete=models.CASCADE)
-    hectareas = models.ForeignKey(Hectareas, on_delete=models.CASCADE)
+    # change
+    type_of_market = models.ManyToManyField(TipoMercado)
 
     class Meta:
         db_table='Variedad_mango'
@@ -54,7 +54,6 @@ class AnalisisSuelo(models.Model):
     boron = models.FloatField(null=False)
     drainage = models.ForeignKey(DrenajeSuelo, on_delete=models.CASCADE)
     soil_type = models.ForeignKey(TipoSuelo, on_delete=models.CASCADE)
-    soil_fertility= models.ForeignKey(FertilidadSuelo, on_delete=models.CASCADE)
     usuario = models.ForeignKey(UserModel, on_delete=models.CASCADE,default=get_user_model())    # usuario --- añadir
     
     class Meta:
