@@ -10,7 +10,7 @@ class FertilidadSuelo(models.Model):
 
     name = models.CharField('Nombre del nutriente',max_length=45)
     description = models.CharField('Descripción del nutriente',max_length=500)
-    level = models.CharField('Nivel del nutiente', choices=level_choices,max_length=255)
+    level = models.CharField('Nivel del nutiente', choices=level_choices,max_length=255,default='OPTIMO')
     value =models.FloatField('Valor del nutriente')
 
     class Meta:
