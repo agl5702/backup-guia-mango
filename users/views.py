@@ -6,10 +6,18 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from users.api.serializers import CustomTokenObtainPairSerializer,CustomUserSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
+
+
 # Create your views here.
 class Login(TokenObtainPairView):
     serializer_class= CustomTokenObtainPairSerializer
-
+    @swagger_auto_schema(
+        operation_description="Iniciar sesión con credenciales de usuario.",
+        operation_summary="Inicio de sesión",
+        tags=['Autenticación']
+    )
     def post(self,request,*args,**kwargs):
         username= request.data.get('username','')
         password = request.data.get('password','')
@@ -35,6 +43,13 @@ class Login(TokenObtainPairView):
 
 class Logout(GenericAPIView):
     permission_classes = (IsAuthenticated,) 
+
+    @swagger_auto_schema(
+        responses={200: "Sesión cerrada correctamente."},
+        operation_description="Cerrar sesión para el usuario autenticado.",
+        operation_summary="Cerrar sesión",
+        tags=['Autenticación']
+    )
 
     def post(self, request, *args, **kwargs):
         # Obtener el usuario autenticado desde la solicitud
