@@ -29,7 +29,7 @@ class pH(models.Model):
 
     description = models.CharField(max_length=500)
     value = models.FloatField('Valor del pH',default=7.0, null=False, blank=False)
-    level = models.CharField('Nivel del nutiente', choices=level_choices,max_length=255)
+    level = models.CharField('Nivel del nutiente', choices=level_choices,max_length=255,default='OPTIMO')
 
     class Meta:
         db_table = 'ph'
@@ -71,7 +71,7 @@ class TexturaSuelo(models.Model):
         ('Limo', 'Limo'),
         ('Arcilla', 'Arcilla'),
     ]
-    name = models.CharField('Nombre de textura',max_length=20, choices=name_choices)
+    name = models.CharField('Nombre de textura',max_length=20, choices=name_choices,default='')
     value = models.FloatField()
     description = models.TextField('Descripción')
 
