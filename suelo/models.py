@@ -36,7 +36,7 @@ class pH(models.Model):
         verbose_name_plural = 'pH'
 
     def __str__(self):
-        return self.value
+        return f" Ph : {self.value}"
     
 #Tipo de Terreno   
 class TipoTerreno(models.Model):
