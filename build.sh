@@ -21,4 +21,4 @@ python manage.py makemigrations tablas_estadisticas
 python manage.py migrate
 
 # Crear un superusuario (si es necesario)
-#python manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin@admin.com', 'admin', 'admin')"
+python manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin@admin.com', 'admin', 'admin')"
