@@ -10,6 +10,7 @@ python manage.py makemigrations tipo_siembra
 python manage.py makemigrations herramientas_agricultura_precision
 python manage.py makemigrations hectareas
 python manage.py makemigrations suelo
+python manage.py makemigrations analisis_suelo
 python manage.py makemigrations variedad_mango
 python manage.py makemigrations cultivo
 python manage.py makemigrations analisis_foliar

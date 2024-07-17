@@ -1,5 +1,5 @@
 from django.db import models
-from variedad_mango.models import AnalisisSuelo
+from analisis_suelo.models import AnalisisSuelo
 
 class AnalisisFoliar(models.Model):
     level_choices = [
