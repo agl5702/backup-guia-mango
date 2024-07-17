@@ -37,8 +37,8 @@ urlpatterns = [
     path('herramientas-de-agricultura-de-presicion/',include('herramientas_agricultura_precision.urls')),
     path('hectareas/',include('hectareas.urls')),
     path('suelo/',include('suelo.urls')),
+    path('analisis-suelo/',include('analisis_suelo.urls')),
     path('variedad-mango/',include('variedad_mango.urls')),
     path('cultivo/',include('cultivo.urls')),    
     path('analisis-foliar/',include('analisis_foliar.urls')),    
-
 ]

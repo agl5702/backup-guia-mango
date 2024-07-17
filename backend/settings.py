@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'hectareas',
     'herramientas_agricultura_precision',
     'informes',
+    'analisis_suelo',
     'suelo',
     'tablas_estadisticas',
     'tipo_siembra',

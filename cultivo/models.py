@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
-from variedad_mango.models import VariedadMango, AnalisisSuelo
+from variedad_mango.models import VariedadMango
+from analisis_suelo.models import AnalisisSuelo
 from herramientas_agricultura_precision.models import Herramientas,TipoMercado
 from tipo_siembra.models import TipoSiembra
 from django.contrib.auth import get_user_model  
