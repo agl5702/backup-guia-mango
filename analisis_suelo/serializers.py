@@ -18,7 +18,6 @@ NUTRIENTE_MAPPING = {
     'Boro': 'boron'
 }
 
-
 class AnalisisSueloSerializer(serializers.ModelSerializer):
     comparacion_nutrientes = serializers.SerializerMethodField()
     comparacion_drenaje = serializers.SerializerMethodField()
@@ -34,16 +33,26 @@ class AnalisisSueloSerializer(serializers.ModelSerializer):
         nutrientes = FertilidadSuelo.objects.all()
         comparacion = {}
         
-        # Comparación de nutrientes
         for nutriente in nutrientes:
             campo_analisis = NUTRIENTE_MAPPING.get(nutriente.name, nutriente.name.lower())
             valor_analisis = getattr(obj, campo_analisis, None)
             if valor_analisis is not None:
-                diferencia = valor_analisis - nutriente.value
+                if valor_analisis < nutriente.min_value:
+                    diferencia = valor_analisis - nutriente.min_value
+                    estado = "BAJO"
+                elif valor_analisis > nutriente.max_value:
+                    diferencia = valor_analisis - nutriente.max_value
+                    estado = "ELEVADO"
+                else:
+                    diferencia = 0
+                    estado = "OPTIMO"
+                
                 comparacion[nutriente.name] = {
                     'valor_analisis': valor_analisis,
-                    'valor_optimo': nutriente.value,
+                    'valor_minimo': nutriente.min_value,
+                    'valor_maximo': nutriente.max_value,
                     'diferencia': diferencia,
+                    'estado': estado,
                 }
             else:
                 print(f"No se encontró correspondencia para {nutriente.name}")
@@ -52,11 +61,22 @@ class AnalisisSueloSerializer(serializers.ModelSerializer):
         try:
             ph_obj = pH.objects.first()
             if ph_obj:
-                diferencia_ph = obj.ph - ph_obj.value
+                if obj.ph < ph_obj.min_value:
+                    diferencia_ph = obj.ph - ph_obj.min_value
+                    estado_ph = "BAJO"
+                elif obj.ph > ph_obj.max_value:
+                    diferencia_ph = obj.ph - ph_obj.max_value
+                    estado_ph = "ELEVADO"
+                else:
+                    diferencia_ph = 0
+                    estado_ph = "OPTIMO"
+                
                 comparacion['pH'] = {
                     'valor_analisis': obj.ph,
-                    'valor_optimo': ph_obj.value,
+                    'valor_minimo': ph_obj.min_value,
+                    'valor_maximo': ph_obj.max_value,
                     'diferencia': diferencia_ph,
+                    'estado': estado_ph,
                 }
             else:
                 print("No se encontró objeto de pH para comparar.")
@@ -70,36 +90,25 @@ class AnalisisSueloSerializer(serializers.ModelSerializer):
         comparacion = {}
 
         if drenaje:
-            if obj.infiltration_rate is not None and obj.infiltration_rate != drenaje.infiltration_rate:
-                comparacion['infiltration_rate'] = {
-                    'valor_analisis': obj.infiltration_rate,
-                    'valor_referencia': drenaje.infiltration_rate,
-                    'diferencia': obj.infiltration_rate - drenaje.infiltration_rate,
-                }
-            if obj.field_capacity is not None and obj.field_capacity != drenaje.field_capacity:
-                comparacion['field_capacity'] = {
-                    'valor_analisis': obj.field_capacity,
-                    'valor_referencia': drenaje.field_capacity,
-                    'diferencia': obj.field_capacity - drenaje.field_capacity,
-                }
-            if obj.point_wither is not None and obj.point_wither != drenaje.wilting_point:
-                comparacion['point_wither'] = {
-                    'valor_analisis': obj.point_wither,
-                    'valor_referencia': drenaje.wilting_point,
-                    'diferencia': obj.point_wither - drenaje.wilting_point,
-                }
-            if obj.permeability is not None and obj.permeability != drenaje.permeability:
-                comparacion['permeability'] = {
-                    'valor_analisis': obj.permeability,
-                    'valor_referencia': drenaje.permeability,
-                    'diferencia': obj.permeability - drenaje.permeability,
-                }
-            if obj.porosity is not None and obj.porosity != drenaje.porosity:
-                comparacion['porosity'] = {
-                    'valor_analisis': obj.porosity,
-                    'valor_referencia': drenaje.porosity,
-                    'diferencia': obj.porosity - drenaje.porosity,
-                }
+            campos_drenaje = [
+                ('infiltration_rate', 'infiltration_rate'),
+                ('field_capacity', 'field_capacity'),
+                ('point_wither', 'wilting_point'),
+                ('permeability', 'permeability'),
+                ('porosity', 'porosity')
+            ]
+
+            for campo_obj, campo_drenaje in campos_drenaje:
+                valor_obj = getattr(obj, campo_obj, None)
+                valor_drenaje = getattr(drenaje, campo_drenaje, None)
+                
+                if valor_obj is not None and valor_drenaje is not None:
+                    diferencia = valor_obj - valor_drenaje
+                    comparacion[campo_obj] = {
+                        'valor_analisis': valor_obj,
+                        'valor_referencia': valor_drenaje,
+                        'diferencia': diferencia,
+                    }
 
         return comparacion
 
