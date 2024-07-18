@@ -9,9 +9,10 @@ class FertilidadSuelo(models.Model):
         ]
 
     name = models.CharField('Nombre del nutriente',max_length=45)
-    description = models.CharField('Descripción del nutriente',max_length=500)
+    description = models.TextField('Descripción del nutriente',max_length=500)
     level = models.CharField('Nivel del nutiente', choices=level_choices,max_length=255,default='OPTIMO')
-    value =models.FloatField('Valor del nutriente')
+    min_value =models.FloatField('Valor mínimo del nutriente')
+    max_value =models.FloatField('Valor máximo nutriente')
 
     class Meta:
         db_table='Fertilidad_suelo'
@@ -27,8 +28,9 @@ class pH(models.Model):
     ]
 
 
-    description = models.CharField(max_length=500)
-    value = models.FloatField('Valor del pH',default=7.0, null=False, blank=False)
+    description = models.TextField(max_length=500)
+    min_value = models.FloatField('Valor mínimo del pH',default=5.5, null=False, blank=False)
+    max_value = models.FloatField('Valor máximo del pH',default=7.0, null=False, blank=False)
     level = models.CharField('Nivel del nutiente', choices=level_choices,max_length=255,default='OPTIMO')
 
     class Meta:
@@ -36,12 +38,12 @@ class pH(models.Model):
         verbose_name_plural = 'pH'
 
     def __str__(self):
-        return f" Ph : {self.value}"
+        return f" Ph : {self.description}"
     
 #Tipo de Terreno   
 class TipoTerreno(models.Model):
     name = models.CharField(max_length=45)
-    description = models.CharField(max_length=500)
+    description = models.TextField(max_length=500)
 
     class Meta:
         db_table = 'Tipo_terreno'
@@ -53,7 +55,7 @@ class TipoTerreno(models.Model):
 # Tipos de suelo 
 class TipoSuelo(models.Model):
     name = models.CharField(max_length=45)
-    description = models.CharField(max_length=500)
+    description = models.TextField(max_length=500)
     # change 
     nutrients = models.ManyToManyField(FertilidadSuelo)
     ph = models.ForeignKey(pH, on_delete=models.CASCADE)
