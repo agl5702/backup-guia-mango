@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # Local Apps
     'cultivo',
     'hectareas',
+    'mercado',
     'herramientas_agricultura_precision',
     'informes',
     'analisis_suelo',
@@ -57,6 +58,7 @@ INSTALLED_APPS = [
     'users',
     'variedad_mango',
     'analisis_foliar',
+
 
     # Third Apps
     'corsheaders',
