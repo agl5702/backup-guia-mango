@@ -68,12 +68,16 @@ class TipoSuelo(models.Model):
     name = models.CharField(max_length=45)
     description = models.TextField(max_length=500)
     # change 
-    nutrients = models.ManyToManyField(FertilidadSuelo)
     ph = models.ForeignKey(pH, on_delete=models.CASCADE)
-    sand = models.FloatField(null=False)
-    silt=models.FloatField(null=False)
-    clay = models.FloatField(null=False)
-    ph= models.ForeignKey(pH, on_delete=models.CASCADE)
+
+    sand_min = models.FloatField(null=False, help_text="Porcentaje mínimo de arena")
+    sand_max = models.FloatField(null=False, help_text="Porcentaje máximo de arena")
+    
+    silt_min = models.FloatField(null=False, help_text="Porcentaje mínimo de limo")
+    silt_max = models.FloatField(null=False, help_text="Porcentaje máximo de limo")
+    
+    clay_min = models.FloatField(null=False, help_text="Porcentaje mínimo de arcilla")
+    clay_max = models.FloatField(null=False, help_text="Porcentaje máximo de arcilla")
     class Meta:
         db_table = 'tipo_suelo'
         verbose_name_plural = 'Tipos de suelos'
