@@ -22,35 +22,46 @@ class FertilidadSuelo(models.Model):
 # Ph    
 class pH(models.Model):
     level_choices = [
-        ('BAJO','Bajo'),
-        ('OPTIMO','Optimo'),
-        ('ELEVADO','Elevado'),
+        ('Bajo','Bajo'),
+        ('Optimo','Optimo'),
+        ('Elevado','Elevado'),
     ]
 
 
     description = models.TextField(max_length=500)
     min_value = models.FloatField('Valor mínimo del pH',default=5.5, null=False, blank=False)
     max_value = models.FloatField('Valor máximo del pH',default=7.0, null=False, blank=False)
-    level = models.CharField('Nivel del nutiente', choices=level_choices,max_length=255,default='OPTIMO')
+    level = models.CharField('Nivel del nutiente', choices=level_choices,max_length=255,default='Optimo')
 
     class Meta:
         db_table = 'ph'
         verbose_name_plural = 'pH'
 
     def __str__(self):
-        return f" Ph : {self.description}"
-    
-#Tipo de Terreno   
-class TipoTerreno(models.Model):
-    name = models.CharField(max_length=45)
-    description = models.TextField(max_length=500)
+        return f" Ph : {self.level}"
+class Conductividad(models.Model):
+    level_choices = [
+        ('Bajo','Bajo'),
+        ('Optimo','Optimo'),
+        ('Elevado','Elevado'),
+    ]
 
+    description = models.TextField(max_length=500)
+    level = models.CharField('Nivel del nutiente', choices=level_choices,max_length=255,default='Optimo')
+    value=models.FloatField(null=False)
+    
+#Textura de suelo
+class TexturaSuelo(models.Model):
+
+    name = models.CharField('Nombre de textura',max_length=20)
+    description = models.TextField('Descripción')
     class Meta:
-        db_table = 'Tipo_terreno'
-        verbose_name_plural = 'Tipos de terrenos'
+        db_table = 'Textura_Suelo'
+        verbose_name_plural = 'Texturas del suelo'
 
     def __str__(self):
         return self.name
+
     
 # Tipos de suelo 
 class TipoSuelo(models.Model):
@@ -59,8 +70,10 @@ class TipoSuelo(models.Model):
     # change 
     nutrients = models.ManyToManyField(FertilidadSuelo)
     ph = models.ForeignKey(pH, on_delete=models.CASCADE)
-    type_of_terrain = models.ForeignKey(TipoTerreno, on_delete=models.CASCADE)
-
+    sand = models.FloatField(null=False)
+    silt=models.FloatField(null=False)
+    clay = models.FloatField(null=False)
+    ph= models.ForeignKey(pH, on_delete=models.CASCADE)
     class Meta:
         db_table = 'tipo_suelo'
         verbose_name_plural = 'Tipos de suelos'
@@ -68,23 +81,6 @@ class TipoSuelo(models.Model):
     def __str__(self):
         return self.name
     
-#Textura de suelo
-class TexturaSuelo(models.Model):
-    name_choices= [
-        ('Arena', 'Arena'),
-        ('Limo', 'Limo'),
-        ('Arcilla', 'Arcilla'),
-    ]
-    name = models.CharField('Nombre de textura',max_length=20, choices=name_choices,default='')
-    value = models.FloatField()
-    description = models.TextField('Descripción')
-
-    class Meta:
-        db_table = 'Textura_Suelo'
-        verbose_name_plural = 'Texturas del suelo'
-
-    def __str__(self):
-        return self.name
 
 # Drenaje del suelo
 class DrenajeSuelo(models.Model):

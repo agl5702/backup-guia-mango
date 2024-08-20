@@ -34,6 +34,7 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('tipo-de-siembra/',include('tipo_siembra.urls')),
+    path('mercado/',include('mercado.urls')),
     path('herramientas-de-agricultura-de-presicion/',include('herramientas_agricultura_precision.urls')),
     path('hectareas/',include('hectareas.urls')),
     path('suelo/',include('suelo.urls')),

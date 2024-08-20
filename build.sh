@@ -7,6 +7,7 @@ pip install -r requirements.txt
 # Realizar las migraciones para cada una de las aplicaciones
 python manage.py makemigrations users
 python manage.py makemigrations tipo_siembra
+python manage.py makemigrations mercado
 python manage.py makemigrations herramientas_agricultura_precision
 python manage.py makemigrations hectareas
 python manage.py makemigrations suelo

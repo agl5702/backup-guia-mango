@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from suelo.models import FertilidadSuelo,pH,TipoTerreno,TipoSuelo
-from suelo.serializers import FertilidadSueloSerializer,pHSerializer,TipoTerrenoSerializer,TipoSueloSerializer
+from suelo.models import FertilidadSuelo,pH,TipoSuelo
+from suelo.serializers import FertilidadSueloSerializer,pHSerializer,TipoSueloSerializer
 from drf_yasg.utils import swagger_auto_schema 
 from drf_yasg import openapi
 
@@ -127,65 +127,6 @@ class pHView(viewsets.ModelViewSet):
         return super().destroy(request, *args, **kwargs)
 
 
-
-class TipoTerrenoView(viewsets.ModelViewSet):
-
-    serializer_class = TipoTerrenoSerializer
-    queryset = TipoTerreno.objects.all()
-
-    @swagger_auto_schema(
-        operation_description="Obtener los tipos de terrenos",
-        responses={200: TipoTerrenoSerializer(many=True)},
-        operation_summary="Lista de los tipos de terrenos",
-        tags= ['Tipo de Terreno']
-    )
-    def list(self, request, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
-
-    @swagger_auto_schema(
-        operation_description="Obtener los tipos de terreno por ID.",
-        responses={200: TipoTerrenoSerializer()},
-        operation_summary="Obeter los tipos de terreno por ID",
-        tags= ['Tipo de Terreno']
-    )
-    def retrieve(self, request, *args, **kwargs):
-        return super().retrieve(request, *args, **kwargs)
-
-    @swagger_auto_schema(
-        operation_description="Crear un nuevo tipo de terreno",
-        responses={200: TipoTerrenoSerializer()},
-        operation_summary="Crea un nuevo tipo de terreno",
-        tags= ['Tipo de Terreno']
-    )
-    def create(self, request, *args, **kwargs):
-        return super().create(request, *args, **kwargs)
-
-    @swagger_auto_schema(
-        operation_description="Actualizar el tipo de terreno ID",
-        responses={200: TipoTerrenoSerializer()},
-        operation_summary="Actualiza el tipo de terreno ID",
-        tags= ['Tipo de Terreno']
-    )
-    def update(self, request, *args, **kwargs):
-        return super().update(request, *args, **kwargs)
-    
-    @swagger_auto_schema(
-        operation_description="Actualizar parcialmente el tipo de terreno",
-        responses={200: TipoTerrenoSerializer()},
-        operation_summary="Actualizar parcialmente el tipo de terreno",
-        tags=['Tipo de Terreno']
-    )
-    def partial_update(self, request, *args, **kwargs):
-        return super().partial_update(request, *args, **kwargs)
-    
-    @swagger_auto_schema(
-        operation_description="Eliminar el tipo de terreno por ID.",
-        responses={204: "No content"},
-        operation_summary="Elimina el tipo de terreno por ID",
-        tags= ['Tipo de Terreno']
-    )
-    def destroy(self, request, *args, **kwargs):
-        return super().destroy(request, *args, **kwargs)
 
 class TipoSueloView(viewsets.ModelViewSet):
 
