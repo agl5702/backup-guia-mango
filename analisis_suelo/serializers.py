@@ -114,6 +114,7 @@ class AnalisisSueloSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
+        print(f"Valores en el serializador - Potasio: {representation.get('potassium')}, Calcio: {representation.get('calcium')}, Magnesio: {representation.get('magnesium')}, Sodio: {representation.get('sodium')}")
         representation['comparacion_nutrientes'] = self.get_comparacion_nutrientes(instance)
         representation['comparacion_drenaje'] = self.get_comparacion_drenaje(instance)
         return representation
