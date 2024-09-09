@@ -1,0 +1,12 @@
+{% extends "admin/base_site.html" %} {% load static %} {% block title %}Keitt
+Web{% endblock %} {%block extrahead %}
+<link rel="stylesheet" href="{% static 'custom/styles.css' %}" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+/>
+{% endblock %} {% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Keitt Web</a></h1>
+{% endblock %} {% block nav-global %}
+<!-- Puedes agregar contenido aquí si es necesario -->
+{% endblock %}

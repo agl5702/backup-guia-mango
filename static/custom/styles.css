@@ -1,0 +1,50 @@
+.icon-textura-suelo {
+  width: 24px; /* Tamaño del icono */
+  height: 24px; /* Tamaño del icono */
+  display: inline-block; /* Asegura que el icono esté en línea con el texto */
+  background: url("../images/texture.svg") no-repeat center center;
+  background-size: contain;
+  color: #c2c7d0; /* Color del icono */
+  vertical-align: middle; /* Alineación vertical con el texto */
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+.icon-nutrients {
+  width: 24px; /* Tamaño del icono */
+  height: 24px; /* Tamaño del icono */
+  display: inline-block; /* Asegura que el icono esté en línea con el texto */
+  background: url("../images/nutrients.svg") no-repeat center center;
+  background-size: contain;
+  color: #c2c7d0; /* Color del icono */
+  vertical-align: middle; /* Alineación vertical con el texto */
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+.app-item a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none; /* Quita el subrayado del enlace si es necesario */
+}
+
+.brand-image {
+  border-radius: 50% !important; /* Redondea el logo */
+  box-shadow: none !important; /* Elimina la sombra */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+}
+
+/* Ajusta el tamaño y forma de la imagen dentro del contenedor */
+.brand-image img {
+  width: 100px; /* Ajusta el tamaño según necesites */
+  height: auto; /* Mantén la proporción del logo */
+  border-radius: 50%; /* O el valor que desees */
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
+.sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+  background-color: #29a900 !important;
+  color: #fff;
+}
