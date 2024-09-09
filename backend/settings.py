@@ -38,6 +38,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 INSTALLED_APPS = [
     # Base Apps
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,7 +84,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'static/templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -145,6 +146,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 if not DEBUG:
 
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -180,3 +184,39 @@ SIMPLE_JWT={
 SWAGGER_SETTINGS = {
     'DOC_EXPANSION': 'none',
 }
+
+JAZZMIN_SETTINGS = {
+    'site_title': 'Keitt Web',
+    # Name sidebar admin app
+    'site_brand': 'Keitt Web',
+    'site_header': 'Mango',
+    'site_footer': 'SENA',
+    'site_logo': 'images/logo.png',
+    'login_logo':'images/keittweb.png',
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+
+        "analisis_foliar.AnalisisFoliar": "fas fa-leaf",
+
+        "analisis_suelo.AnalisisSuelo": "bi bi-clipboard-data-fill",
+
+        "cultivo": "fas fa-tractor",
+        "cultivo.Cultivo": "fas fa-tractor",
+
+        "suelo.TexturaSuelo": "icon-textura-suelo",
+        "suelo.pH":"fas fa-vial",
+        "suelo.TipoSuelo":"fas fa-mountain",
+        "suelo.DrenajeSuelo": "fas fa-tint",
+
+        "suelo.FertilidadSuelo": "icon-nutrients",
+
+        "informes.Informes":"fas fa-file-alt",
+        
+        
+        "herramientas_agricultura_precision.Herramientas":"fas fa-tools"
+    },
+
+
+    }
