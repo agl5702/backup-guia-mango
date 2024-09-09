@@ -173,6 +173,7 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL= 'users.User'
+DEFAULT_USER_ID = 1
 
 SIMPLE_JWT={
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=1),

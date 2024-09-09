@@ -10,13 +10,13 @@ UserModel = get_user_model()
 
 class AnalisisSuelo(models.Model):
     name = models.CharField(max_length=20, editable=False, default='Análisis del suelo')
-    message = models.CharField(max_length=1000, blank=False, null=False)
-    description = models.CharField(max_length=1000)
+    message = models.CharField(max_length=1000, blank=False,editable=False, null=False, default="")
+    description = models.CharField(max_length=1000,default="",editable=False)
     
     # Texture 
     sand = models.FloatField(null=False)
     silt = models.FloatField(null=False)
-    clay = models.FloatField(null=False)
+    clay = models.FloatField(null=False)    
     
     # pH
     ph = models.FloatField(null=False)
@@ -42,7 +42,7 @@ class AnalisisSuelo(models.Model):
     profundidad_cm = models.FloatField(null=False)  # cm
     
     # Calculate soil texture
-    soil_texture = models.ForeignKey(TipoSuelo, on_delete=models.CASCADE, null=True, blank=True)
+    soil_texture = models.ForeignKey(TipoSuelo, on_delete=models.CASCADE,editable=False, null=True, blank=True)
     
     # User 
     usuario = models.ForeignKey(UserModel, on_delete=models.CASCADE, default=get_user_model())
