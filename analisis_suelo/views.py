@@ -1,15 +1,25 @@
-from rest_framework import viewsets
+from rest_framework import viewsets,filters
 from analisis_suelo.models import AnalisisSuelo
 from analisis_suelo.serializers import AnalisisSueloSerializer
 from drf_yasg.utils import swagger_auto_schema # type: ignore
 from drf_yasg import openapi # type: ignore
-
+from rest_framework.permissions import IsAuthenticated
 
 
 class AnalisisSueloView(viewsets.ModelViewSet):
     
     serializer_class = AnalisisSueloSerializer
     queryset = AnalisisSuelo.objects.all()
+    permission_classes = [IsAuthenticated]
+    def get_queryset(self):
+
+        
+        user = self.request.user
+
+        queryset= AnalisisSuelo.objects.filter(usuario=user)
+
+        return queryset
+
 
     @swagger_auto_schema(
         operation_description="Obtener todos los análisis del suelo",
