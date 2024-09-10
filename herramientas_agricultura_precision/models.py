@@ -5,9 +5,11 @@ from mercado.models import TipoMercado
     
 class Herramientas(models.Model):
 
+
     name = models.CharField('Nombre de la herramienta',max_length=145)
     description = models.TextField('Descripción de la herramienta',max_length=500)
-    type_market = models.ManyToManyField(TipoMercado)
+    
+    
 
     class Meta:
         db_table = 'Herramientas'
