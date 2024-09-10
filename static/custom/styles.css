@@ -20,6 +20,17 @@
   margin-right: 8px; /* Espacio entre el icono y el texto */
 }
 
+.icon-tsiembra {
+  width: 24px; /* Tamaño del icono */
+  height: 24px; /* Tamaño del icono */
+  display: inline-block; /* Asegura que el icono esté en línea con el texto */
+  background: url("../images/tsiembra.svg") no-repeat center center;
+  background-size: contain;
+  color: #c2c7d0; /* Color del icono */
+  vertical-align: middle; /* Alineación vertical con el texto */
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
 .app-item a {
   display: inline-flex;
   align-items: center;
