@@ -213,7 +213,7 @@ JAZZMIN_SETTINGS = {
 
         "suelo.FertilidadSuelo": "icon-nutrients",
 
-        "informes.Informes":"fas fa-file-alt",
+        "informes.Informes":"fas fa-file-alt", 
         
         
         "herramientas_agricultura_precision.Herramientas":"fas fa-tools"
