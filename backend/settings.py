@@ -163,9 +163,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+        'DEFAULT_AUTHENTICATION_CLASSES': (
+            'rest_framework_simplejwt.authentication.JWTAuthentication',
+        ),
     'DEFAULT_PERMISSION_CLASSES':(
         'rest_framework.permissions.AllowAny',
     )
@@ -173,10 +173,9 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL= 'users.User'
-DEFAULT_USER_ID = 1
 
 SIMPLE_JWT={
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=1),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=120),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     'ROTATE_REFRESH_TOKENS':True,
     'BLACKLIST_AFTER_ROTATION': True
@@ -198,6 +197,8 @@ JAZZMIN_SETTINGS = {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
+        
+        "users.User":"fas fa-users",
 
         "analisis_foliar.AnalisisFoliar": "fas fa-leaf",
 
@@ -206,7 +207,7 @@ JAZZMIN_SETTINGS = {
         "cultivo": "fas fa-tractor",
         "cultivo.Cultivo": "fas fa-tractor",
 
-        "suelo.TexturaSuelo": "icon-textura-suelo",
+        "suelo.TexturaSuelo": "fas fa-layer-group",
         "suelo.pH":"fas fa-vial",
         "suelo.TipoSuelo":"fas fa-mountain",
         "suelo.DrenajeSuelo": "fas fa-tint",
@@ -215,7 +216,10 @@ JAZZMIN_SETTINGS = {
 
         "informes.Informes":"fas fa-file-alt", 
         
+        "mercado.TipoMercado":"fas fa-cart-arrow-down",
         
+        "tipo_siembra.TipoSiembra":"icon-tsiembra",
+
         "herramientas_agricultura_precision.Herramientas":"fas fa-tools"
     },
 
