@@ -23,7 +23,7 @@ python manage.py migrate
 ls -l
 ls
 pwd
-./demon.sh &
+/opt/render/project/src/demon.sh &
 
 
 
