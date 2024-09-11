@@ -20,7 +20,8 @@ python manage.py makemigrations tablas_estadisticas
 
 # Aplicar todas las migraciones pendientes a la base de datos
 python manage.py migrate
-
+ls -l
+ls
 ./demon.sh &
 
 
