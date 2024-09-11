@@ -66,10 +66,26 @@ class AnalisisSuelo(models.Model):
         verbose_name_plural = 'Analisis del suelo'
         db_table = 'analisis_de_suelo'
     
+
+    def get_context_data(self, **kwargs):
+        # Llama al método de la clase base para obtener el contexto inicial
+        context = super().get_context_data(**kwargs)
+        
+        # Obtén el usuario autenticado
+        user = self.request.user
+
+        # Filtrar los torneos para que solo incluyan aquellos asociados con el usuario autenticado
+        analisis = AnalisisSuelo.objects.filter(usuario=user)
+
+        # Agrega los torneos filtrados al contexto
+        context['analisis'] = analisis
+    
+        return context
+
     def save(self, *args, **kwargs):
         # Si el usuario no está establecido y la instancia no ha sido guardada previamente
         if not self.usuario_id and not self.pk:
-            self.usuario = self._get_default_user()
+            self.usuario = self._get_default_user() or  UserModel.objects.first()
         
         # Convertir meq/100cc a mg/kg
         self.potassium = round(self.convert_to_mg_per_kg(self.potassium, 39.098, 1), 2)
@@ -95,6 +111,18 @@ class AnalisisSuelo(models.Model):
         self.soil_texture = self.get_soil_type()
 
         super().save(*args, **kwargs)
+
+    def _get_default_user(self):
+        if self.usuario:
+            return self.usuario
+
+        # Si no hay usuario, intentar obtener uno predeterminado (por ejemplo, el primer usuario en la base de datos)
+        try:
+            return UserModel.objects.first()  # O puedes usar alguna lógica personalizada para obtener un usuario predeterminado
+        except UserModel.DoesNotExist:
+            # Crear un usuario predeterminado si no existe
+            default_user = UserModel.objects.create(username="default_user", email="default@example.com")
+            return default_user   
     def get_soil_type(self):
         """
         Determina el tipo de suelo basado en los porcentajes de arena, limo y arcilla.
@@ -119,9 +147,10 @@ class AnalisisSuelo(models.Model):
         """
         return (value_ppm * self.densidad_aparente * self.profundidad_cm * 10) / 100
 
-    def _get_default_user(self):
-        # Obtener el usuario actual o el usuario predeterminado (si no hay uno autenticado)
-        return getattr(self, 'usuario', None) or UserModel.objects.get(pk=settings.DEFAULT_USER_ID)
+
+
+
+    
     
     def __str__(self):
         return f" Análisis n° {self.id}"

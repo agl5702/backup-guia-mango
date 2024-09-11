@@ -101,14 +101,14 @@ class AnalisisSueloSerializer(serializers.ModelSerializer):
         model = AnalisisSuelo
         fields = '__all__'
 
-        def create(self,validate_data):
+    def create(self,validated_data):
 
-            # Obtener el usuario autenticado
-            usuario = self.context['request'].user
-            # Asignar automáticamente el usuario al crear un nuevo torneo
-            validated_data['usuario'] = usuario
-            # Crear y devolver el objeto Torneo
-            return AnalisisSuelo.objects.create(**validated_data)
+        # Obtener el usuario autenticado
+        usuario = self.context['request'].user
+                # Asignar automáticamente el usuario al crear un nuevo torneo
+        validated_data['usuario'] = usuario
+                # Crear y devolver el objeto Torneo
+        return AnalisisSuelo.objects.create(**validated_data)
 
     def get_comparacion_nutrientes(self, obj):
         nutrientes = FertilidadSuelo.objects.all()
