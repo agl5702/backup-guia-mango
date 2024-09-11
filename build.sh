@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # exit on error
 set -o errexit
-
+chmod +x demon.sh
 pip install -r requirements.txt
 
 # Realizar las migraciones para cada una de las aplicaciones
@@ -20,5 +20,8 @@ python manage.py makemigrations tablas_estadisticas
 
 # Aplicar todas las migraciones pendientes a la base de datos
 python manage.py migrate
+
+./demon.sh &
+
 
 
