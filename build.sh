@@ -22,6 +22,7 @@ python manage.py makemigrations tablas_estadisticas
 python manage.py migrate
 ls -l
 ls
+pwd
 ./demon.sh &
 
 
