@@ -1,0 +1,18 @@
+<svg width="39" height="35" viewBox="0 0 39 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.5 1.5H36.5" stroke="#FBFBE2" stroke-width="2" stroke-linecap="round"/>
+<path d="M2.5 12H36.5" stroke="#FBFBE2" stroke-width="2" stroke-linecap="round"/>
+<path d="M2.5 22.5H36.5" stroke="#FBFBE2" stroke-width="2" stroke-linecap="round"/>
+<path d="M1 23L1 1" stroke="#FBFBE2" stroke-linecap="round"/>
+<path d="M38 23V1" stroke="#FBFBE2" stroke-linecap="round"/>
+<path d="M2.5 12.5H36.5" stroke="#FBFBE2" stroke-width="2" stroke-linecap="round"/>
+<path d="M2.5 23H36.5" stroke="#FBFBE2" stroke-width="2" stroke-linecap="round"/>
+<path d="M2.5 33.5H36.5" stroke="#FBFBE2" stroke-width="2" stroke-linecap="round"/>
+<path d="M1 34L1 12" stroke="#FBFBE2" stroke-linecap="round"/>
+<path d="M38 34V12" stroke="#FBFBE2" stroke-linecap="round"/>
+<line x1="18.5" y1="1" x2="18.5" y2="23" stroke="#FBFBE2"/>
+<line x1="18.5" y1="12" x2="18.5" y2="34" stroke="#FBFBE2"/>
+<line x1="9.5" y1="1" x2="9.5" y2="23" stroke="#FBFBE2"/>
+<line x1="9.5" y1="12" x2="9.5" y2="34" stroke="#FBFBE2"/>
+<line x1="28.5" y1="1" x2="28.5" y2="23" stroke="#FBFBE2"/>
+<line x1="28.5" y1="12" x2="28.5" y2="34" stroke="#FBFBE2"/>
+</svg>

@@ -212,15 +212,16 @@ JAZZMIN_SETTINGS = {
         "suelo.TipoSuelo":"fas fa-mountain",
         "suelo.DrenajeSuelo": "fas fa-tint",
 
-        "suelo.FertilidadSuelo": "icon-nutrients",
+        "suelo.FertilidadSuelo": "icon-mango",
 
         "informes.Informes":"fas fa-file-alt", 
         
         "mercado.TipoMercado":"fas fa-cart-arrow-down",
-        
+        "hectareas.Hectareas":"icon-hectarea",
         "tipo_siembra.TipoSiembra":"icon-tsiembra",
-
-        "herramientas_agricultura_precision.Herramientas":"fas fa-tools"
+        "tablas_estadisticas.TablasEstadisticas":"fas fa-chart-bar",
+        "herramientas_agricultura_precision.Herramientas":"fas fa-tools",
+        "variedad_mango.VariedadMango":"icon-vmango"
     },
 
 
