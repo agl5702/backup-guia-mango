@@ -28,6 +28,11 @@ def format_decimal(value):
 
 # Recomendaciones específicas para cada nutriente
 RECOMENDACIONES = {
+    "pH": {
+        "OPTIMO": "El nivel de PH es adecuado para el desarrollo del mango. Mantener las prácticas actuales.",
+        "BAJO": "El PH está bajo. Se recomienda aplicar fertilizante que contenga nitrógeno para mejorar el crecimiento y desarrollo de las frutas.",
+        "ELEVADO": "El nivel de PH es alto. Reducir la aplicación de fertilizantes nitrogenados para evitar un crecimiento excesivo y problemas en la calidad de las frutas."
+    },
     "Nitrógeno": {
         "OPTIMO": "El nivel de nitrógeno es adecuado para el desarrollo del mango. Mantener las prácticas actuales.",
         "BAJO": "El nitrógeno está bajo. Se recomienda aplicar fertilizante que contenga nitrógeno para mejorar el crecimiento y desarrollo de las frutas.",
@@ -89,7 +94,6 @@ RECOMENDACIONES = {
         "ELEVADO": "El nivel de boro es alto. Reducir la aplicación de fertilizantes con boro para evitar problemas de toxicidad y efectos adversos en la calidad del fruto."
     }
 }
-
 class AnalisisSueloSerializer(serializers.ModelSerializer):
     comparacion_nutrientes = serializers.SerializerMethodField()
     comparacion_drenaje = serializers.SerializerMethodField()
@@ -158,7 +162,7 @@ class AnalisisSueloSerializer(serializers.ModelSerializer):
                 else:
                     diferencia_ph = format_decimal(0)
                     estado_ph = "OPTIMO"
-                
+
                 comparacion['pH'] = {
                     'valor_analisis': format_decimal(obj.ph),
                     'valor_minimo': format_decimal(ph_obj.min_value),
