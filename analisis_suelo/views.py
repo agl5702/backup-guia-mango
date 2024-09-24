@@ -10,7 +10,7 @@ class AnalisisSueloView(viewsets.ModelViewSet):
     
     serializer_class = AnalisisSueloSerializer
     queryset = AnalisisSuelo.objects.all()
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     def get_queryset(self):
 
 
