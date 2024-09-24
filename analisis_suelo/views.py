@@ -10,15 +10,15 @@ class AnalisisSueloView(viewsets.ModelViewSet):
     
     serializer_class = AnalisisSueloSerializer
     queryset = AnalisisSuelo.objects.all()
-    permission_classes = [IsAuthenticated]
-    def get_queryset(self):
+    # permission_classes = [IsAuthenticated]
+    # def get_queryset(self):
 
         
-        user = self.request.user
+    #     user = self.request.user
 
-        queryset= AnalisisSuelo.objects.filter(usuario=user)
+    #     queryset= AnalisisSuelo.objects.filter(usuario=user)
 
-        return queryset
+    #     return queryset
 
 
     @swagger_auto_schema(
