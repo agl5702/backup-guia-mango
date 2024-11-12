@@ -27,6 +27,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 
+MODEL_PATH = os.path.join(BASE_DIR, 'plagas', 'modelo_plaga_multiclase.h5')
+
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -59,6 +61,7 @@ INSTALLED_APPS = [
     'users',
     'variedad_mango',
     'analisis_foliar',
+    'plagas',
 
 
     # Third Apps
@@ -221,7 +224,8 @@ JAZZMIN_SETTINGS = {
         "tipo_siembra.TipoSiembra":"icon-tsiembra",
         "tablas_estadisticas.TablasEstadisticas":"fas fa-chart-bar",
         "herramientas_agricultura_precision.Herramientas":"fas fa-tools",
-        "variedad_mango.VariedadMango":"icon-vmango"
+        "variedad_mango.VariedadMango":"icon-vmango",
+        "plagas.Plaga":"fas fa-bug",
     },
 
 

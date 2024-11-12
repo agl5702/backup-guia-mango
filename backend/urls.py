@@ -5,18 +5,20 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+
 schema_view = get_schema_view(
-   openapi.Info(
-      title="Guia Mango API",
-      default_version='v1',
-      description="Documentacion de la API REST del proyecto DESARROLLO DE GUIA INTERACTIVA WEB...",	
-      terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="tenshidesu12345@gmail.com",),
-      license=openapi.License(name="BSD License"),
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
+    openapi.Info(
+        title="Tu API",
+        default_version='v1',
+        description="Descripción de tu API",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="contact@tuapi.local"),
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
 )
+schema_view.security = [{'Bearer': []}] 
 
 from users.views import Login,Logout
 from rest_framework_simplejwt.views import (
@@ -42,4 +44,6 @@ urlpatterns = [
     path('variedad-mango/',include('variedad_mango.urls')),
     path('cultivo/',include('cultivo.urls')),    
     path('analisis-foliar/',include('analisis_foliar.urls')),    
+    path('plagas/',include('plagas.urls')),    
+
 ]
