@@ -3,7 +3,6 @@ from plagas.models import Plaga
 from rest_framework.permissions import IsAuthenticated
 from plagas.serializers import PlagaSerializer
 from drf_yasg.utils import swagger_auto_schema
-from drf_yasg import openapi
 from rest_framework.response import Response
 from rest_framework.decorators import action
 import tensorflow as tf
@@ -32,7 +31,6 @@ class PlagaView(viewsets.ModelViewSet):
     serializer_class = PlagaSerializer
     queryset = Plaga.objects.all()
     permission_classes = [IsAuthenticated]
-    # Establecer los parsers para permitir la carga de archivos
     parser_classes = (MultiPartParser, FormParser)
 
     @swagger_auto_schema(
@@ -120,10 +118,25 @@ class PlagaView(viewsets.ModelViewSet):
         # Eliminar el archivo temporal
         os.remove(img_path)
 
+        # Recomendar acciones basadas en la predicción
+        recomendaciones = self.obtener_recomendaciones(predicted_class_name)
+
         return Response({
             "prediccion": predicted_class_name,
-            "probabilidades": [
-                {"clase": class_names[i], "probabilidad": prob*100}
-                for i, prob in enumerate(pred[0])
-            ]
+            "recomendaciones": recomendaciones
         })
+
+    def obtener_recomendaciones(self, plaga):
+        recomendaciones = {
+            "antracnosis": "Se recomienda eliminar las partes afectadas de las plantas y aplicar tratamientos biológicos con extractos naturales como el aceite de neem o el bicarbonato de sodio. Si la situación es grave, se puede considerar el uso de fungicidas sistémicos como el azoxistrobina, pero siempre como último recurso.",
+            "cochinilla": "Para controlar la cochinilla, se pueden utilizar depredadores naturales como las mariquitas o insectos benéficos. También puedes aplicar aceites vegetales o jabones insecticidas que son menos agresivos para el medio ambiente. Si la infestación es severa, un insecticida sistémico como el imidacloprid puede ser necesario",
+            "eriofidos": "Los eriófidos pueden ser controlados mediante el uso de aceites minerales o aceites esenciales como el de menta, que actúan como repelentes. También puedes aplicar acaricidas naturales a base de tierra de diatomeas. En casos más críticos, el uso de acaricidas químicos como abamectina podría ser necesario.",
+            "hormigas": "Utilizar cebos ecológicos para hormigas o trampas caseras con vinagre y azúcar es una forma efectiva de controlarlas. Para plagas más grandes, el monitoreo constante y la eliminación manual de hormigueros pueden ser útiles. Solo si la población se descontrola, se podrían considerar productos químicos como el ácido bórico.",
+            "malformación": "La malformación floral o del fruto se puede prevenir mediante la poda adecuada de las ramas afectadas. También se recomienda aplicar tratamientos biológicos preventivos con extractos de plantas. Si los problemas persisten, el uso de fungicidas preventivos, como el tebuconazole, puede ser una opción.",
+            "oido": "Para tratar la roya oídio, se recomienda podar las ramas afectadas y aplicar tratamientos naturales como el té de ajo o el bicarbonato de sodio. En caso de una infección grave, un fungicida específico para hongos como el azoxistrobina podría ser necesario, pero siempre en última instancia.",
+            "trips": "Los trips pueden ser controlados utilizando depredadores naturales como las ácaros predadores. También se pueden usar trampas pegajosas de color azul o amarillas. En caso de ser necesario, un insecticida de bajo impacto como el spinosad es efectivo para el control de estos insectos",
+            "mango_sano": "El mango está en buen estado. Se recomienda mantener buenas prácticas de manejo agrícola, como la poda y la fertilización adecuada. Además, mantener un monitoreo preventivo de plagas y enfermedades puede ayudar a prevenir problemas futuros."
+        }
+
+        recomendacion = recomendaciones.get(plaga, "No se han encontrado recomendaciones para esta plaga.")
+        return recomendacion.replace("\n", " ")  # Elimina saltos de línea
