@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 # exit on error
+# Instalar Git LFS
+apt-get update && apt-get install -y git-lfs
+git lfs install
+git lfs pull
 set -o errexit
 chmod +x demon.sh
 pip install -r requirements.txt
