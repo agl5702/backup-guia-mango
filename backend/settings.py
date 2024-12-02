@@ -27,7 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 
-MODEL_PATH = os.path.join(BASE_DIR, 'plagas', 'modelo.h5')
+MODEL_PATH = os.path.join(BASE_DIR, '/opt/render/project/src//plagas', 'modelo.h5')
 
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
