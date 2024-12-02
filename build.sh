@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 # exit on error
 # Instalar Git LFS
-apt-get update && apt-get install -y git-lfs
-git lfs install
-git lfs pull
+
 set -o errexit
 chmod +x demon.sh
+# Descargar modelo.h5 desde Google Drive
+echo "Descargando modelo.h5 desde Google Drive..."
+MODEL_URL="https://drive.google.com/uc?id=1XwYZ12345abcDEFG6789HI"
+curl -L -o plagas/modelo.h5 "$MODEL_URL"
+echo "Modelo descargado exitosamente."
+
 pip install -r requirements.txt
 
 # Realizar las migraciones para cada una de las aplicaciones
@@ -21,12 +25,11 @@ python manage.py makemigrations cultivo
 python manage.py makemigrations analisis_foliar
 python manage.py makemigrations informes
 python manage.py makemigrations tablas_estadisticas
+python manage.py makemigrations plagas
 
 # Aplicar todas las migraciones pendientes a la base de datos
 python manage.py migrate
-ls -l
-ls
-pwd
+
 /opt/render/project/src/demon.sh &
 
 
