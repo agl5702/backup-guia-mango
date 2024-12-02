@@ -1,0 +1,34 @@
+[
+  {
+    "model": "tipo_siembra.TipoSiembra",
+    "pk": 1,
+    "fields": {
+      "name": "Siembra Cuadrada",
+      "description": "En la siembra cuadrada, los árboles de mango se plantan en un patrón que forma cuadrados perfectos. Cada árbol tiene la misma distancia entre sí en todas las direcciones, lo que facilita las labores de manejo, riego y recolección. Este método permite un buen aprovechamiento del espacio y asegura una distribución uniforme de los nutrientes y el agua. Sin embargo, puede no ser el más eficiente en términos de maximizar el uso del suelo en terrenos irregulares."
+    }
+  },
+  {
+    "model": "tipo_siembra.TipoSiembra",
+    "pk": 2,
+    "fields": {
+      "name": "Siembra Rectangular",
+      "description": "La siembra rectangular es similar a la cuadrada, pero las distancias entre los árboles varían en las filas y entre las filas. Este método puede ser ventajoso en términos de facilitar el movimiento de maquinaria y permitir un acceso más fácil para el mantenimiento y la recolección. La disposición rectangular puede aprovechar mejor el espacio disponible y adaptarse a la topografía del terreno."
+    }
+  },
+  {
+    "model": "tipo_siembra.TipoSiembra",
+    "pk": 3,
+    "fields": {
+      "name": "Siembra en Tresbolillo",
+      "description": "La siembra en tresbolillo, o en triángulo equilátero, implica plantar los árboles de manera que formen triángulos equidistantes. Este método permite una mayor densidad de plantación en comparación con la siembra cuadrada o rectangular, lo que puede aumentar la productividad por hectárea. También facilita una mejor exposición al sol y circulación del aire entre los árboles, lo cual es beneficioso para la salud de los mismos. Sin embargo, puede ser más complejo de planificar y ejecutar."
+    }
+  },
+  {
+    "model": "tipo_siembra.TipoSiembra",
+    "pk": 4,
+    "fields": {
+      "name": "Siembra Hexagonal",
+      "description": "La siembra hexagonal es menos común, pero se utiliza en algunas plantaciones. Los árboles se plantan de manera que cada uno forma un vértice de hexágonos, lo que permite una distribución más densa y uniforme. Este método maximiza el uso del espacio y puede aumentar la productividad por área, pero es el más complejo de implementar y requiere una planificación cuidadosa para asegurar que los árboles se plantan correctamente."
+    }
+  }
+]

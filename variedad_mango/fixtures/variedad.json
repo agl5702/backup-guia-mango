@@ -1,0 +1,12 @@
+[
+  {
+    "model": "variedad_mango.VariedadMango",
+    "pk": 1,
+    "fields": {
+      "name": "Keitt",
+      "description": "El mango Keitt es una variedad altamente apreciada por su sabor dulce, su textura suave y su pulpa jugosa. Es una excelente opción para quienes buscan un mango de calidad superior para consumo fresco o en procesos de comercialización. Como recomendación, se sugiere plantar el mango Keitt en suelos bien drenados, con un pH ligeramente ácido a neutro, y con un clima tropical o subtropical que no sufra heladas. En cuanto al manejo, es crucial mantener una densidad de siembra adecuada, entre 200 a 400 plantas por hectárea, para permitir el crecimiento óptimo de cada árbol sin que se vea afectada su nutrición ni su desarrollo. Además, es fundamental implementar prácticas de riego adecuado, poda periódica y control de plagas y enfermedades. El mango Keitt, al ser una variedad resistente, puede prosperar con cuidados básicos, pero una atención adecuada en cada fase de su cultivo garantizará una cosecha abundante y de alta calidad.",
+      "soil_type": 4,
+      "sowing_type": 2
+    }
+  }
+]

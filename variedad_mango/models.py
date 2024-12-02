@@ -8,7 +8,7 @@ from herramientas_agricultura_precision.models import TipoMercado
 class VariedadMango(models.Model):
 
     name = models.CharField(max_length=45)
-    description = models.CharField(max_length=500)
+    description = models.CharField(max_length=2000)
     soil_type = models.ForeignKey(TipoSuelo, on_delete=models.CASCADE)
     sowing_type = models.ForeignKey(TipoSiembra, on_delete=models.CASCADE)
     # change

@@ -1,0 +1,11 @@
+[
+  {
+    "model": "hectareas.Hectareas",
+    "pk": 1,
+    "fields": {
+      "amount": 1,
+      "description": "En el cultivo de mango Keitt, la recomendación de sembrar entre 200 y 400 plantas por hectárea depende de varios factores agronómicos que afectan el rendimiento y la salud del cultivo. La densidad de siembra influye directamente en el espacio disponible para que cada planta reciba suficiente luz, agua, nutrientes y aire, factores esenciales para su desarrollo óptimo. Si se siembran demasiadas plantas por hectárea, puede haber competencia por estos recursos, lo que afecta negativamente al crecimiento de las plantas y puede reducir la calidad de los frutos. Además, la circulación de aire se ve limitada, lo que favorece la aparición de enfermedades fúngicas. Por otro lado, sembrar muy pocas plantas por hectárea puede desperdiciar el potencial productivo del terreno, ya que no se aprovechan de manera eficiente los recursos disponibles. El rango de 200 a 400 plantas por hectárea es ideal para asegurar un equilibrio entre la maximización de la producción y el mantenimiento de la salud de las plantas. Este rango permite que las plantas de mango Keitt tengan suficiente espacio para crecer adecuadamente, asegurar una buena ventilación y recibir suficiente radiación solar para la fotosíntesis. Además, facilita el manejo adecuado de prácticas como la poda, el riego y la fertilización, lo que a su vez mejora el rendimiento y la calidad de la fruta.",
+      "number_trees": 200
+    }
+  }
+]

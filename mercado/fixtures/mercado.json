@@ -1,0 +1,26 @@
+[
+  {
+    "model": "mercado.TipoMercado",
+    "pk": 1,
+    "fields": {
+      "name": "Local",
+      "description": "El mercado local del mango se refiere a la comercialización y consumo de mangos dentro de una región específica o localidad. Este tipo de mercado es vital para los pequeños productores, ya que permite la venta directa a consumidores, mercados agrícolas y tiendas locales. Las variedades de mango disponibles en el mercado local suelen estar frescas y son conocidas por su sabor y calidad, lo que fomenta el apoyo a la economía local y reduce los costos de transporte y almacenamiento."
+    }
+  },
+  {
+    "model": "mercado.TipoMercado",
+    "pk": 2,
+    "fields": {
+      "name": "Nacional",
+      "description": "El mercado nacional del mango abarca la distribución y venta de mangos a lo largo de todo el país. Este mercado implica una cadena de suministro más compleja que incluye productores, distribuidores y grandes cadenas de supermercados. La demanda en el mercado nacional puede ser influenciada por factores como la temporada de cosecha, la calidad del producto y las campañas de marketing. La logística y el transporte juegan un papel crucial para mantener la frescura del mango mientras se traslada desde las zonas de cultivo hasta los puntos de venta en diferentes regiones del país."
+    }
+  },
+  {
+    "model": "mercado.TipoMercado",
+    "pk": 3,
+    "fields": {
+      "name": "Internacional",
+      "description": "El mercado internacional del mango implica la exportación e importación de mangos entre diferentes países. Este mercado es fundamental para los grandes productores que buscan expandir su alcance y obtener mejores ingresos. Los mangos exportados deben cumplir con estrictas normas de calidad y seguridad alimentaria impuestas por los países importadores. Además, factores como los acuerdos comerciales, las barreras arancelarias y la competencia global influyen en la dinámica del mercado internacional. La logística eficiente y el manejo adecuado del producto son esenciales para mantener la calidad durante el transporte a largas distancias y garantizar la satisfacción del consumidor final."
+    }
+  }
+]

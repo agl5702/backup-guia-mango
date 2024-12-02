@@ -1,0 +1,26 @@
+[
+  {
+    "model": "suelo.TexturaSuelo",
+    "pk": 1,
+    "fields": {
+      "name": "Franco Arenoso",
+      "description": "Este suelo tiene una alta proporción de arena, lo que le otorga una excelente capacidad de drenaje y evita el encharcamiento. Es ligero y permite un rápido crecimiento de las raíces, lo que favorece el desarrollo del mango Keitt. Sin embargo, requiere una adecuada fertilización para mantener los niveles de nutrientes necesarios."
+    }
+  },
+  {
+    "model": "suelo.TexturaSuelo",
+    "pk": 2,
+    "fields": {
+      "name": "Franco Arcilooso",
+      "description": "El suelo franco arcilloso tiene una mayor cantidad de arcilla, lo que le da una buena retención de agua y nutrientes. Aunque es más pesado y tiene un menor drenaje, su alta capacidad para almacenar nutrientes lo hace adecuado para el mango Keitt, siempre que se garantice un buen sistema de drenaje para evitar el encharcamiento."
+    }
+  },
+  {
+    "model": "suelo.TexturaSuelo",
+    "pk": 3,
+    "fields": {
+      "name": "Franco",
+      "description": "Este suelo tiene una mezcla equilibrada de arena, arcilla y limo, lo que proporciona una buena estructura para la retención de nutrientes y agua, sin perder la capacidad de drenaje. Es ideal para el mango Keitt debido a su balance entre fertilidad y aireación, favoreciendo un crecimiento saludable del árbol."
+    }
+  }
+]

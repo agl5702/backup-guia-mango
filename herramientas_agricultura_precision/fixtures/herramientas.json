@@ -1,0 +1,66 @@
+[
+  {
+    "model": "herramientas_agricultura_precision.Herramientas",
+    "pk": 1,
+    "fields": {
+      "name": "CROPWAT",
+      "description": "CROPWAT es una herramienta de software que ayuda a la planificación del riego y la gestión del agua en cultivos. Utiliza datos climáticos y de suelo para calcular las necesidades hídricas de los cultivos y proporciona recomendaciones sobre el riego adecuado, optimizando el uso del agua en el cultivo de mango Keitt."
+    }
+  },
+  {
+    "model": "herramientas_agricultura_precision.Herramientas",
+    "pk": 2,
+    "fields": {
+      "name": "CLIMWAT",
+      "description": "CLIMWAT es una base de datos global de datos climáticos que proporciona información sobre el clima a largo plazo de diferentes regiones. Esta herramienta es útil para la planificación de cultivos como el mango Keitt, ya que permite obtener datos climáticos históricos y actuales para optimizar la toma de decisiones en la agricultura de precisión."
+    }
+  },
+  {
+    "model": "herramientas_agricultura_precision.Herramientas",
+    "pk": 3,
+    "fields": {
+      "name": "GPS y GNSS",
+      "description": "Los sistemas GPS y GNSS son fundamentales para la agricultura de precisión. Permiten el monitoreo preciso de la ubicación de los cultivos de mango Keitt, la aplicación de insumos y la trazabilidad de la producción, mejorando la eficiencia y reduciendo el uso de recursos."
+    }
+  },
+  {
+    "model": "herramientas_agricultura_precision.Herramientas",
+    "pk": 4,
+    "fields": {
+      "name": "Sensores de humedad del suelo",
+      "description": "Los sensores de humedad del suelo permiten medir la cantidad de agua disponible para los cultivos de mango Keitt en tiempo real. Estos sensores son esenciales para tomar decisiones informadas sobre el riego, ayudando a optimizar el uso del agua y mejorar el crecimiento del mango."
+    }
+  },
+  {
+    "model": "herramientas_agricultura_precision.Herramientas",
+    "pk": 5,
+    "fields": {
+      "name": "Drones para monitoreo de cultivos",
+      "description": "Los drones se utilizan en la agricultura de precisión para realizar monitoreos aéreos de los cultivos de mango Keitt. Permiten obtener imágenes de alta resolución, que ayudan a detectar problemas de salud de las plantas, la distribución del agua y el estado general de los cultivos."
+    }
+  },
+  {
+    "model": "herramientas_agricultura_precision.Herramientas",
+    "pk": 6,
+    "fields": {
+      "name": "Sistemas de riego automatizado",
+      "description": "Los sistemas de riego automatizado permiten programar y controlar el riego en los cultivos de mango Keitt, asegurando que reciban la cantidad exacta de agua necesaria según las condiciones del suelo y el clima. Esto ayuda a ahorrar recursos hídricos y a mantener la salud del cultivo."
+    }
+  },
+  {
+    "model": "herramientas_agricultura_precision.Herramientas",
+    "pk": 7,
+    "fields": {
+      "name": "Sensores de temperatura y humedad ambiental",
+      "description": "Los sensores de temperatura y humedad ambiental miden las condiciones climáticas alrededor de los cultivos de mango Keitt. Estos datos son esenciales para evaluar el impacto de las condiciones climáticas en el desarrollo del mango y para ajustar las prácticas agrícolas de manera precisa."
+    }
+  },
+  {
+    "model": "herramientas_agricultura_precision.Herramientas",
+    "pk": 8,
+    "fields": {
+      "name": "Plataformas de análisis de datos agrícolas",
+      "description": "Las plataformas de análisis de datos permiten recopilar y analizar grandes volúmenes de datos relacionados con el cultivo de mango Keitt, como el clima, el suelo, y el riego. Esto ayuda a los agricultores a tomar decisiones más informadas sobre la gestión de los cultivos."
+    }
+  }
+]

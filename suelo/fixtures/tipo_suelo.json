@@ -1,0 +1,182 @@
+[
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 1,
+    "fields": {
+      "name": "Arenoso",
+      "description": "Suelo con una alta proporción de arena, ideal para cultivos que requieren buen drenaje.",
+      "ph": 1,
+      "sand_min": 85,
+      "sand_max": 100,
+      "silt_min": 0,
+      "silt_max": 15,
+      "clay_min": 0,
+      "clay_max": 10
+    }
+  },
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 2,
+    "fields": {
+      "name": "Arenoso franco",
+      "description": "Suelo equilibrado entre arena y limo, adecuado para una variedad de cultivos.",
+      "ph": 1,
+      "sand_min": 70,
+      "sand_max": 85,
+      "silt_min": 0,
+      "silt_max": 30,
+      "clay_min": 0,
+      "clay_max": 15
+    }
+  },
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 3,
+    "fields": {
+      "name": "Franco arenoso",
+      "description": "Suelo con una buena proporción de arena y limo, adecuado para cultivos que requieren una mezcla balanceada.",
+      "ph": 1,
+      "sand_min": 52,
+      "sand_max": 85,
+      "silt_min": 0,
+      "silt_max": 50,
+      "clay_min": 0,
+      "clay_max": 20
+    }
+  },
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 4,
+    "fields": {
+      "name": "Franco",
+      "description": "Suelo equilibrado con una buena cantidad de limo y arcilla, apto para una amplia gama de cultivos.",
+      "ph": 1,
+      "sand_min": 23,
+      "sand_max": 52,
+      "silt_min": 28,
+      "silt_max": 50,
+      "clay_min": 7,
+      "clay_max": 27
+    }
+  },
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 5,
+    "fields": {
+      "name": "Franco limoso",
+      "description": "Suelo con un alto contenido de limo, bueno para cultivos que requieren suelos ricos en nutrientes.",
+      "ph": 1,
+      "sand_min": 0,
+      "sand_max": 50,
+      "silt_min": 50,
+      "silt_max": 100,
+      "clay_min": 0,
+      "clay_max": 27
+    }
+  },
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 6,
+    "fields": {
+      "name": "Limoso",
+      "description": "Suelo principalmente compuesto de limo, adecuado para ciertos cultivos, aunque puede necesitar enmiendas para drenaje.",
+      "ph": 1,
+      "sand_min": 0,
+      "sand_max": 20,
+      "silt_min": 80,
+      "silt_max": 100,
+      "clay_min": 0,
+      "clay_max": 12
+    }
+  },
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 7,
+    "fields": {
+      "name": "Franco arcilloso arenoso",
+      "description": "Suelo con un contenido equilibrado de arena, limo y arcilla, ideal para cultivos más exigentes.",
+      "ph": 1,
+      "sand_min": 45,
+      "sand_max": 80,
+      "silt_min": 0,
+      "silt_max": 28,
+      "clay_min": 20,
+      "clay_max": 35
+    }
+  },
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 8,
+    "fields": {
+      "name": "Franco arcilloso",
+      "description": "Suelo con una proporción equilibrada de arcilla y limo, adecuado para la mayoría de cultivos.",
+      "ph": 1,
+      "sand_min": 20,
+      "sand_max": 45,
+      "silt_min": 15,
+      "silt_max": 52,
+      "clay_min": 27,
+      "clay_max": 40
+    }
+  },
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 9,
+    "fields": {
+      "name": "Franco arcilloso limoso",
+      "description": "Suelo con una mezcla de arcilla, limo y arena, adecuado para cultivos que requieren alta retención de nutrientes.",
+      "ph": 1,
+      "sand_min": 0,
+      "sand_max": 20,
+      "silt_min": 40,
+      "silt_max": 100,
+      "clay_min": 27,
+      "clay_max": 40
+    }
+  },
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 10,
+    "fields": {
+      "name": "Arcilloso arenoso",
+      "description": "Suelo con una buena cantidad de arcilla y arena, adecuado para cultivos que requieren suelos más densos.",
+      "ph": 1,
+      "sand_min": 45,
+      "sand_max": 65,
+      "silt_min": 0,
+      "silt_max": 20,
+      "clay_min": 35,
+      "clay_max": 100
+    }
+  },
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 11,
+    "fields": {
+      "name": "Arcilloso limoso",
+      "description": "Suelo principalmente compuesto de arcilla y limo, ideal para cultivos que requieren una alta retención de agua.",
+      "ph": 1,
+      "sand_min": 0,
+      "sand_max": 20,
+      "silt_min": 40,
+      "silt_max": 60,
+      "clay_min": 40,
+      "clay_max": 100
+    }
+  },
+  {
+    "model": "suelo.TipoSuelo",
+    "pk": 12,
+    "fields": {
+      "name": "Arcilloso",
+      "description": "Suelo con una alta concentración de arcilla, adecuado para cultivos que requieren suelos más compactos y retenedores de agua.",
+      "ph": 1,
+      "sand_min": 0,
+      "sand_max": 45,
+      "silt_min": 0,
+      "silt_max": 60,
+      "clay_min": 40,
+      "clay_max": 100
+    }
+  }
+]

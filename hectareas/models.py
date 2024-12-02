@@ -4,7 +4,7 @@ from django.db import models
 class Hectareas(models.Model):
 
     amount=models.FloatField('Cantidad de Hectáreas')
-    description = models.TextField('Descripción',max_length=500)
+    description = models.TextField('Descripción',max_length=2000)
     number_trees= models.IntegerField('Cantidad de Árboles',default=0,editable=False)
 
     class Meta:

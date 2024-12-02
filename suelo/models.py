@@ -38,7 +38,7 @@ class pH(models.Model):
         verbose_name_plural = 'pH'
 
     def __str__(self):
-        return f" Ph : {self.level}"
+        return f" Ph - {self.level}"
 class Conductividad(models.Model):
     level_choices = [
         ('Bajo','Bajo'),

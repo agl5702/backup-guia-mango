@@ -1,0 +1,9 @@
+[
+  {
+    "model": "suelo.pH",
+    "pk": 1,
+    "fields": {
+      "description": "Ph óptimo para la siembra de mango Keitt"
+    }
+  }
+]

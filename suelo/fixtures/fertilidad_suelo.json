@@ -1,0 +1,156 @@
+[
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 1,
+    "fields": {
+      "name": "Nitrógeno",
+      "description": "Fundamental para el crecimiento de hojas y tallos, y promueve el desarrollo vegetativo.",
+      "level": "OPTIMO",
+      "min_value": 110,
+      "max_value": 130
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 2,
+    "fields": {
+      "name": "NH4",
+      "description": "Fuente de nitrógeno que ayuda al crecimiento inicial y es más retenido en el suelo ácido.",
+      "level": "OPTIMO",
+      "min_value": 30,
+      "max_value": 40
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 3,
+    "fields": {
+      "name": "NH3",
+      "description": "Proporciona nitrógeno rápidamente disponible para la planta, ideal en suelos neutros o alcalinos.",
+      "level": "OPTIMO",
+      "min_value": 80,
+      "max_value": 90
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 4,
+    "fields": {
+      "name": "Fósforo",
+      "description": "Esencial para la formación de raíces, flores y frutos, y mejora la eficiencia del uso del agua.",
+      "level": "OPTIMO",
+      "min_value": 18,
+      "max_value": 22
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 5,
+    "fields": {
+      "name": "Potasio",
+      "description": "Aumenta la resistencia a enfermedades y regula el uso de agua, mejora la calidad de los frutos.",
+      "level": "OPTIMO",
+      "min_value": 140,
+      "max_value": 160
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 6,
+    "fields": {
+      "name": "Calcio",
+      "description": "Fortalece las paredes celulares, mejorando la estructura del tejido vegetal y la calidad del fruto.",
+      "level": "OPTIMO",
+      "min_value": 35,
+      "max_value": 45
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 7,
+    "fields": {
+      "name": "Magnesio",
+      "description": "Componente clave de la clorofila, esencial para la fotosíntesis y la producción de energía.",
+      "level": "OPTIMO",
+      "min_value": 18,
+      "max_value": 22
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 8,
+    "fields": {
+      "name": "Azufre",
+      "description": "Necesario para la síntesis de proteínas y para mejorar el sabor y color del fruto.",
+      "level": "OPTIMO",
+      "min_value": 13,
+      "max_value": 17
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 9,
+    "fields": {
+      "name": "Hierro",
+      "description": "Vital para la síntesis de clorofila y la fotosíntesis; evita clorosis en hojas jóvenes.",
+      "level": "OPTIMO",
+      "min_value": 0.35,
+      "max_value": 0.45
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 10,
+    "fields": {
+      "name": "Manganeso",
+      "description": "Participa en la fotosíntesis y ayuda en la activación de varias enzimas necesarias para el crecimiento.",
+      "level": "OPTIMO",
+      "min_value": 0.25,
+      "max_value": 0.35
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 11,
+    "fields": {
+      "name": "Zinc",
+      "description": "Importante para la síntesis de hormonas de crecimiento y el desarrollo de hojas y raíces.",
+      "level": "OPTIMO",
+      "min_value": 0.15,
+      "max_value": 0.25
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 12,
+    "fields": {
+      "name": "Cobre",
+      "description": "Contribuye a la formación de lignina en las paredes celulares, aumentando la resistencia a enfermedades.",
+      "level": "OPTIMO",
+      "min_value": 0.08,
+      "max_value": 0.12
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 13,
+    "fields": {
+      "name": "Boro",
+      "description": "Crucial para la formación de frutos y la germinación del polen; mejora la calidad de los frutos.",
+      "level": "OPTIMO",
+      "min_value": 0.08,
+      "max_value": 0.12
+    }
+  },
+  {
+    "model": "suelo.FertilidadSuelo",
+    "pk": 14,
+    "fields": {
+      "name": "Molibdeno",
+      "description": "Participa en la fijación del nitrógeno y en el metabolismo del hierro, evitando deficiencias.",
+      "level": "OPTIMO",
+      "min_value": 0.02,
+      "max_value": 0.04
+    }
+  }
+]

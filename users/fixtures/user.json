@@ -1,0 +1,15 @@
+[
+  {
+    "model": "users.User",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "email": "admin@admin.com",
+      "name": "admin",
+      "last_name": "admin",
+      "password": "admin",
+      "is_staff": true,
+      "is_superuser": true
+    }
+  }
+]
