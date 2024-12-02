@@ -1,3 +1,0 @@
-*.h5 filter=lfs diff=lfs merge=lfs -text
-archivo_grande.zip filter=lfs diff=lfs merge=lfs -text
-modelo.h5 filter=lfs diff=lfs merge=lfs -text
