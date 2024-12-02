@@ -5,11 +5,7 @@
 set -o errexit
 chmod +x demon.sh
 # Descargar modelo.h5 desde Google Drive
-echo "Descargando modelo.h5 desde Google Drive..."
-MODEL_URL="https://drive.google.com/uc?id=1XwYZ12345abcDEFG6789HI"
-curl -L -o plagas/modelo.h5 "$MODEL_URL"
-echo "Modelo descargado exitosamente."
-ls plagas/
+
 
 pip install -r requirements.txt
 
